@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Daily Wisdom</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Figma fonts via Google Fonts CDN -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-bg-wrapper">
+		<div class="app-bg">
+			<div class="gradient1"></div>
+			<div class="gradient2"></div>
+		</div>
+	</div>
+
+  <div class="app-container">
+    <header class="header">
+      <h1 class="header__title">Daily Wisdom</h1>
+      <button class="header__random-btn" id="random-btn">
+        <img src="assets/icons/dices.svg" alt="" class="icon icon--dice" width="16" height="16" />
+        <span>Random quote</span>
+      </button>
+    </header>
+    <main class="main-content">
+      <section class="quote-block" id="quote-block">
+				<div class="quote-export-bg" aria-hidden="true"></div> <!-- new gradient layer for export -->
+        <blockquote class="quote-block__text" id="quote-text">
+          <!-- Quote will be injected here -->
+        </blockquote>
+        <div class="quote-block__author" id="quote-author">
+          <!-- Author will be injected here -->
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="button-row">
+        <button class="action-btn" id="copy-btn">
+          <img src="assets/icons/copy.svg" alt="" class="icon icon--copy" width="16" height="16"/>
+          <span>Copy</span>
+        </button>
+        <button class="action-btn" id="save-btn">
+          <img src="assets/icons/download.svg" alt="" class="icon icon--save" width="16" height="16"/>
+          <span>Save as image</span>
+        </button>
+      </div>
+    </footer>
+  </div>
+	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="quotes.js"></script>
+</body>
+</html>

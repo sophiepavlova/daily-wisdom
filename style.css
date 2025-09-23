@@ -1,0 +1,353 @@
+:root {
+  /* Figma tokens */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-ui: 'Inter', sans-serif;
+  --color-header: #3C17A1;
+  --color-quote-bg: #343434;
+  --color-author-bg: #616161;
+  --color-btn-text: #1F2937;
+  --color-btn-bg: #fff;
+  --color-btn-border: #1F2937;
+  --color-main-bg: #fafaf9; /* stone-50 */
+  --radius-btn: 12px;
+  /* add gradient colors here */
+}
+
+body {
+  background: var(--color-main-bg);
+  margin: 0;
+  font-family: var(--font-ui);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Wrapper scales according to screen width */
+.app-bg-wrapper {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* center vertically too */
+  pointer-events: none;
+  z-index: 0;
+
+  /* Scale based on screen width relative to 1440px design */
+  transform: scale(calc(100vw / 1440));
+  transform-origin: center top; /* keep it horizontally centered */
+  width: 1440px;
+  height: 100vh; /* or your design canvas height */
+}
+
+.app-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Ellipse 10: pink */
+.app-bg::before {
+  content: "";
+  position: absolute;
+  width: 44.6vw;  /* 641 / 1440 * 100 */
+  height: 49.9vw; /* 718 / 1440 * 100 */
+  top: 1.23vw;    /* 17 / 1440 * 100 */
+  left: 34.6vw;   /* 498 / 1440 * 100 */
+  background: #FF90EA;
+  border-radius: 50%;
+  filter: blur(27.8vw); /* 400 / 1440 * 100 */
+  transform: translate(-50%, -50%);
+}
+
+/* Vector 6: peach, rotated */
+.app-bg::after {
+  content: "";
+  position: absolute;
+  width: 96.9vw;  /* 1394 / 1440 * 100 */
+  height: 82.9vw; /* 1193 / 1440 * 100 */
+  top: -38.7vw;   /* -558 / 1440 * 100 */
+  left: -32.8vw;  /* -473 / 1440 * 100 */
+  background: #FFDEDA;
+  border-radius: 50%;
+  filter: blur(27.8vw);
+  transform: rotate(12deg) translate(-50%, -50%);
+}
+/* .app-bg::after {
+    content: "";
+    position: absolute;
+    width: 96.9vw;
+    height: 612.9vw;
+    top: -668.7vw;
+    left: -973.8vw;
+    background: #FFDEDA;
+    border-radius: 950%;
+    filter: blur(27.8vw);
+    transform: rotate(12deg) translate(-50%, -50%);
+} */
+
+/* Ellipse 9: blue gradient */
+.app-bg .gradient1 {
+  position: absolute;
+  width: 68.3vw;   /* 983 / 1440 * 100 */
+  height: 68.3vw;
+  top: -2.85vw;    /* -41 / 1440 * 100 */
+  left: 59.7vw;    /* 860 / 1440 * 100 */
+  border-radius: 50%;
+  background: linear-gradient(180deg, #8BB5FF 0%, #E1FBFF 100%);
+  filter: blur(27.8vw);
+  transform: translate(-50%, -50%);
+}
+
+/* Ellipse 11: solid blue */
+.app-bg .gradient2 {
+  position: absolute;
+  width: 16.7vw;  /* 240 / 1440 * 100 */
+  height: 16.7vw;
+  top: 18.5vw;    /* 266 / 1440 * 100 */
+  left: 66.9vw;   /* 963 / 1440 * 100 */
+  border-radius: 50%;
+  background: #0094FF;
+  filter: blur(20.8vw); /* 300 / 1440 * 100 */
+  transform: translate(-50%, -50%);
+}
+
+
+
+.app-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 48px - 75px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+	padding-left: 100px;
+  padding-right: 100px;
+	padding-bottom: 72px;;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px; /* per your spec */
+  margin-bottom: 85px;;
+ 
+}
+
+.header__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--color-header);
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.header__random-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-btn-text);
+  background: none;
+  border: 1px solid var(--color-btn-border);
+  border-radius: var(--radius-btn);
+  padding: 14px 16px;
+  cursor: pointer;
+	transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon {
+  display: block;
+}
+
+.main-content {
+  /* flex: 1 1 auto; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+	justify-content: center;
+}
+
+.quote-block {
+  max-width: 1030px;
+  min-width: 0;
+  height: 483px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+  gap: 20px;
+  box-sizing: border-box;
+  padding: 40px 48px;
+}
+
+
+.quote-block__text {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 7vw, 6rem);
+  line-height: 110%;
+  color: var(--color-quote-bg);
+  margin: 0;
+  word-break: break-word;
+  text-align: left;
+}
+
+.quote-block__author {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-author-bg);
+  text-align: right;
+  opacity: 0.85;
+}
+
+/* .footer {
+  display: flex;
+  justify-content: center;
+} */
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 24px;        /* distance from bottom of app-container */
+  display: flex;
+  justify-content: center;
+  margin: 0;           /* Remove margin-top if you had it */
+  padding-bottom: 0;   /* If you want no extra space below */
+}
+
+.button-row {
+  display: flex;
+  gap: 20px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-btn-text);
+  /* background: var(--color-btn-bg); */
+	background: none;
+  border: 1px solid var(--color-btn-border);
+  border-radius: var(--radius-btn);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: background 0.1s, box-shadow 0.1s;
+}
+.header__random-btn:active,
+.action-btn:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+
+.quote-block.exporting {
+    background: radial-gradient(ellipse 480px 320px at 700px 50px, #FF90EA -60%, transparent 80%),
+    radial-gradient(ellipse 400px 200px at 700px 360px, #00CEFC -50%, transparent 110%),
+    radial-gradient(ellipse 800px 600px at 400px -100px, #FFDEDA 0%, transparent 380%),
+    radial-gradient(ellipse 600px 400px at 500px 200px, #8BB5FF 0%, #E1FBFF 100%),
+    #fff;
+    border-radius: 32px;
+    color: #343434 !important;
+    box-shadow: none !important;
+}
+/* 🦊new gradients block */
+/* Make the card capable of holding a bg layer */
+.quote-block {
+  position: relative;
+  overflow: hidden;          /* clip bg to rounded corners */
+  border-radius: 28px;       /* matches your visual */
+}
+
+/* Hidden normally; shown only during export */
+.quote-export-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: none;
+
+  /* IMPORTANT: no final transparency — outer stop is #fafaf9 */
+  background:
+    radial-gradient(120% 120% at 35% 8%,  #FF90EA 0% 25%, rgba(255,144,234,0.45) 45%, #fafaf9 78%),
+    radial-gradient(90%  90%  at 82% 70%, #8BB5FF 0% 18%, #E1FBFF 38%, #fafaf9 72%),
+    radial-gradient(160% 140% at -12% -20%, #FFDEDA 0% 32%, #fafaf9 74%);
+  /* No filter: blur; html2canvas darkens with it */
+}
+
+/* During export, flatten the base to the page bg color */
+.is-exporting #quote-block { background: #fafaf9; }
+.is-exporting .quote-export-bg { display: block; }
+
+/* Keep text above that layer */
+.quote-block__text,
+.quote-block__author { position: relative; z-index: 1; }
+
+.header__random-btn:hover,
+.action-btn:hover{
+	background-color: var(--color-btn-bg);
+	box-shadow: 0 2px 12px rgba(60, 23, 161, 0.1);
+	transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (max-width: 780px) {
+	.footer {
+		margin-top:0;
+	}
+	.quote-block {
+		height: 600px;
+	}
+}
+/* ===== Mobile (390px) ===== */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 20px 20px;
+		min-height: calc(100vh - 48px - 32px);
+  }
+	.footer {
+		bottom: 0px;
+	}
+
+  .header {
+    gap: 16px;
+    padding-bottom: 18px;
+  }
+
+  .quote-block {
+    width: 350px;
+    /* height: 240px; */
+    padding: 24px 10px;
+    border-radius: 20px;
+    gap: 12px;
+  }
+
+	.quote-block__text {
+    font-size: clamp(1.2rem, 8vw, 3rem);
+  }
+
+  .quote-block__author {
+    font-size: 1.2rem;
+  }
+
+
+  /* .footer {
+    margin-top: 32px;
+  } */
+
+  .button-row {
+    gap: 12px;
+  }
+}
