@@ -2,12 +2,12 @@
   /* Figma tokens */
   --font-display: 'Cormorant Garamond', serif;
   --font-ui: 'Inter', sans-serif;
-  --color-header: #3C17A1;
+  --color-header: #3c17a1;
   --color-quote-bg: #343434;
   --color-author-bg: #616161;
-  --color-btn-text: #1F2937;
+  --color-btn-text: #1f2937;
   --color-btn-bg: #fff;
-  --color-btn-border: #1F2937;
+  --color-btn-border: #1f2937;
   --color-main-bg: #fafaf9; /* stone-50 */
   --radius-btn: 12px;
   /* add gradient colors here */
@@ -49,13 +49,13 @@ body {
 
 /* Ellipse 10: pink */
 .app-bg::before {
-  content: "";
+  content: '';
   position: absolute;
-  width: 44.6vw;  /* 641 / 1440 * 100 */
+  width: 44.6vw; /* 641 / 1440 * 100 */
   height: 49.9vw; /* 718 / 1440 * 100 */
-  top: 1.23vw;    /* 17 / 1440 * 100 */
-  left: 34.6vw;   /* 498 / 1440 * 100 */
-  background: #FF90EA;
+  top: 1.23vw; /* 17 / 1440 * 100 */
+  left: 34.6vw; /* 498 / 1440 * 100 */
+  background: #ff90ea;
   border-radius: 50%;
   filter: blur(27.8vw); /* 400 / 1440 * 100 */
   transform: translate(-50%, -50%);
@@ -63,13 +63,13 @@ body {
 
 /* Vector 6: peach, rotated */
 .app-bg::after {
-  content: "";
+  content: '';
   position: absolute;
-  width: 96.9vw;  /* 1394 / 1440 * 100 */
+  width: 96.9vw; /* 1394 / 1440 * 100 */
   height: 82.9vw; /* 1193 / 1440 * 100 */
-  top: -38.7vw;   /* -558 / 1440 * 100 */
-  left: -32.8vw;  /* -473 / 1440 * 100 */
-  background: #FFDEDA;
+  top: -38.7vw; /* -558 / 1440 * 100 */
+  left: -32.8vw; /* -473 / 1440 * 100 */
+  background: #ffdeda;
   border-radius: 50%;
   filter: blur(27.8vw);
   transform: rotate(12deg) translate(-50%, -50%);
@@ -90,12 +90,12 @@ body {
 /* Ellipse 9: blue gradient */
 .app-bg .gradient1 {
   position: absolute;
-  width: 68.3vw;   /* 983 / 1440 * 100 */
+  width: 68.3vw; /* 983 / 1440 * 100 */
   height: 68.3vw;
-  top: -2.85vw;    /* -41 / 1440 * 100 */
-  left: 59.7vw;    /* 860 / 1440 * 100 */
+  top: -2.85vw; /* -41 / 1440 * 100 */
+  left: 59.7vw; /* 860 / 1440 * 100 */
   border-radius: 50%;
-  background: linear-gradient(180deg, #8BB5FF 0%, #E1FBFF 100%);
+  background: linear-gradient(180deg, #8bb5ff 0%, #e1fbff 100%);
   filter: blur(27.8vw);
   transform: translate(-50%, -50%);
 }
@@ -103,17 +103,15 @@ body {
 /* Ellipse 11: solid blue */
 .app-bg .gradient2 {
   position: absolute;
-  width: 16.7vw;  /* 240 / 1440 * 100 */
+  width: 16.7vw; /* 240 / 1440 * 100 */
   height: 16.7vw;
-  top: 18.5vw;    /* 266 / 1440 * 100 */
-  left: 66.9vw;   /* 963 / 1440 * 100 */
+  top: 18.5vw; /* 266 / 1440 * 100 */
+  left: 66.9vw; /* 963 / 1440 * 100 */
   border-radius: 50%;
-  background: #0094FF;
+  background: #0094ff;
   filter: blur(20.8vw); /* 300 / 1440 * 100 */
   transform: translate(-50%, -50%);
 }
-
-
 
 .app-container {
   position: relative;
@@ -124,9 +122,9 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 30px;
-	padding-left: 100px;
+  padding-left: 100px;
   padding-right: 100px;
-	padding-bottom: 72px;;
+  padding-bottom: 72px;
 }
 
 .header {
@@ -134,8 +132,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding-bottom: 20px; /* per your spec */
-  margin-bottom: 85px;;
- 
+  margin-bottom: 85px;
 }
 
 .header__title {
@@ -160,7 +157,10 @@ body {
   border-radius: var(--radius-btn);
   padding: 14px 16px;
   cursor: pointer;
-	transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .icon {
@@ -172,7 +172,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-	justify-content: center;
+  justify-content: center;
 }
 
 .quote-block {
@@ -188,7 +188,6 @@ body {
   box-sizing: border-box;
   padding: 40px 48px;
 }
-
 
 .quote-block__text {
   font-family: var(--font-display);
@@ -220,11 +219,11 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 24px;        /* distance from bottom of app-container */
+  bottom: 24px; /* distance from bottom of app-container */
   display: flex;
   justify-content: center;
-  margin: 0;           /* Remove margin-top if you had it */
-  padding-bottom: 0;   /* If you want no extra space below */
+  margin: 0; /* Remove margin-top if you had it */
+  padding-bottom: 0; /* If you want no extra space below */
 }
 
 .button-row {
@@ -241,12 +240,14 @@ body {
   font-size: 15px;
   color: var(--color-btn-text);
   /* background: var(--color-btn-bg); */
-	background: none;
+  background: none;
   border: 1px solid var(--color-btn-border);
   border-radius: var(--radius-btn);
   padding: 14px 16px;
   cursor: pointer;
-  transition: background 0.1s, box-shadow 0.1s;
+  transition:
+    background 0.1s,
+    box-shadow 0.1s;
 }
 .header__random-btn:active,
 .action-btn:active {
@@ -254,23 +255,39 @@ body {
   transition: transform 0.1s ease;
 }
 
-
 .quote-block.exporting {
-    background: radial-gradient(ellipse 480px 320px at 700px 50px, #FF90EA -60%, transparent 80%),
-    radial-gradient(ellipse 400px 200px at 700px 360px, #00CEFC -50%, transparent 110%),
-    radial-gradient(ellipse 800px 600px at 400px -100px, #FFDEDA 0%, transparent 380%),
-    radial-gradient(ellipse 600px 400px at 500px 200px, #8BB5FF 0%, #E1FBFF 100%),
+  background:
+    radial-gradient(
+      ellipse 480px 320px at 700px 50px,
+      #ff90ea -60%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse 400px 200px at 700px 360px,
+      #00cefc -50%,
+      transparent 110%
+    ),
+    radial-gradient(
+      ellipse 800px 600px at 400px -100px,
+      #ffdeda 0%,
+      transparent 380%
+    ),
+    radial-gradient(
+      ellipse 600px 400px at 500px 200px,
+      #8bb5ff 0%,
+      #e1fbff 100%
+    ),
     #fff;
-    border-radius: 32px;
-    color: #343434 !important;
-    box-shadow: none !important;
+  border-radius: 32px;
+  color: #343434 !important;
+  box-shadow: none !important;
 }
 /* 🦊new gradients block */
 /* Make the card capable of holding a bg layer */
 .quote-block {
   position: relative;
-  overflow: hidden;          /* clip bg to rounded corners */
-  border-radius: 28px;       /* matches your visual */
+  overflow: hidden; /* clip bg to rounded corners */
+  border-radius: 28px; /* matches your visual */
 }
 
 /* Hidden normally; shown only during export */
@@ -282,44 +299,64 @@ body {
 
   /* IMPORTANT: no final transparency — outer stop is #fafaf9 */
   background:
-    radial-gradient(120% 120% at 35% 8%,  #FF90EA 0% 25%, rgba(255,144,234,0.45) 45%, #fafaf9 78%),
-    radial-gradient(90%  90%  at 82% 70%, #8BB5FF 0% 18%, #E1FBFF 38%, #fafaf9 72%),
-    radial-gradient(160% 140% at -12% -20%, #FFDEDA 0% 32%, #fafaf9 74%);
+    radial-gradient(
+      120% 120% at 35% 8%,
+      #ff90ea 0% 25%,
+      rgba(255, 144, 234, 0.45) 45%,
+      #fafaf9 78%
+    ),
+    radial-gradient(
+      90% 90% at 82% 70%,
+      #8bb5ff 0% 18%,
+      #e1fbff 38%,
+      #fafaf9 72%
+    ),
+    radial-gradient(160% 140% at -12% -20%, #ffdeda 0% 32%, #fafaf9 74%);
   /* No filter: blur; html2canvas darkens with it */
 }
 
 /* During export, flatten the base to the page bg color */
-.is-exporting #quote-block { background: #fafaf9; }
-.is-exporting .quote-export-bg { display: block; }
+.is-exporting #quote-block {
+  background: #fafaf9;
+}
+.is-exporting .quote-export-bg {
+  display: block;
+}
 
 /* Keep text above that layer */
 .quote-block__text,
-.quote-block__author { position: relative; z-index: 1; }
+.quote-block__author {
+  position: relative;
+  z-index: 1;
+}
 
 .header__random-btn:hover,
-.action-btn:hover{
-	background-color: var(--color-btn-bg);
-	box-shadow: 0 2px 12px rgba(60, 23, 161, 0.1);
-	transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+.action-btn:hover {
+  background-color: var(--color-btn-bg);
+  box-shadow: 0 2px 12px rgba(60, 23, 161, 0.1);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 @media (max-width: 780px) {
-	.footer {
-		margin-top:0;
-	}
-	.quote-block {
-		height: 600px;
-	}
+  .footer {
+    margin-top: 0;
+  }
+  .quote-block {
+    height: 600px;
+  }
 }
 /* ===== Mobile (390px) ===== */
 @media (max-width: 600px) {
   .app-container {
     padding: 20px 20px;
-		min-height: calc(100vh - 48px - 32px);
+    min-height: calc(100vh - 48px - 32px);
   }
-	.footer {
-		bottom: 0px;
-	}
+  .footer {
+    bottom: 0px;
+  }
 
   .header {
     gap: 16px;
@@ -334,14 +371,13 @@ body {
     gap: 12px;
   }
 
-	.quote-block__text {
+  .quote-block__text {
     font-size: clamp(1.2rem, 8vw, 3rem);
   }
 
   .quote-block__author {
     font-size: 1.2rem;
   }
-
 
   /* .footer {
     margin-top: 32px;
@@ -350,4 +386,9 @@ body {
   .button-row {
     gap: 12px;
   }
+}
+
+.quote-block.is-changing .quote-block__text,
+.quote-block.is-changing .quote-block__author {
+  visibility: hidden;
 }
