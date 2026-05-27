@@ -5,28 +5,6 @@ const SHEET_CSV_URL =
 let quotes = [];
 
 // Simple CSV to array parser
-// function parseCSV(text) {
-//   const lines = text.trim().split('\n');
-//   lines.shift(); // Remove header row
-
-//   return lines.map((line) => {
-//     // Split so that only the last column is author, everything before is the quote
-//     const parts = line.split(',');
-//     if (parts.length < 2) return { quote: line.trim(), author: '' };
-//     let author = parts.pop().trim();
-//     let quote = parts.join(',').trim();
-
-//     // Remove leading/trailing quotes ONLY (not inside)
-//     // author = author.replace(/^"|"$/g, '');
-//     // quote = quote.replace(/^"|"$/g, '');
-
-//     // Remove leading/trailing quotes ONLY (not inside)
-//     // Then unescape doubled CSV quotes
-//     author = author.replace(/^"|"$/g, '').replace(/""/g, '"');
-//     quote = quote.replace(/^"|"$/g, '').replace(/""/g, '"');
-//     return { quote, author };
-//   });
-// }
 
 function parseCSV(text) {
   const parsed = Papa.parse(text, {
@@ -54,21 +32,7 @@ async function fetchQuotes() {
 }
 
 // Display a random quote
-// function displayRandomQuote() {
-//   if (!quotes.length) return;
-//   const idx = Math.floor(Math.random() * quotes.length);
-//   const q = quotes[idx];
-//   const quoteText = document.getElementById('quote-text');
-//   const quoteAuthor = document.getElementById('quote-author');
 
-//   // Reset font size to CSS clamp default before fitting
-//   quoteText.style.fontSize = '';
-//   quoteText.textContent = q.quote;
-//   quoteAuthor.textContent = q.author ? `— ${q.author}` : '';
-
-//   // Fit after DOM is rendered (double setTimeout is super reliable)
-//   setTimeout(fitQuoteText, 0);
-// }
 function displayRandomQuote() {
   if (!quotes.length) return;
 
@@ -130,7 +94,6 @@ document.getElementById('copy-btn').addEventListener('click', () => {
 });
 
 // Save as image (placeholder, add html2canvas or dom-to-image later)
-// Save as image
 document.getElementById('save-btn').addEventListener('click', saveQuoteImage);
 
 async function saveQuoteImage() {
